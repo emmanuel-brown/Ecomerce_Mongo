@@ -1,0 +1,38 @@
+{
+  "name": "emongo",
+  "version": "1.0.0",
+  "description": "Future Fancy, Buy The Future Today",
+  "main": "index.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node index.js",
+    "start:dev": "concurrently \"nodemon index.js --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmanuel-brown/Ecomerce_Mongo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emmanuel-brown/Ecomerce_Mongo/issues"
+  },
+  "homepage": "https://github.com/emmanuel-brown/Ecomerce_Mongo#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "concurrently": "^4.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.1",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.7.11",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.4"
+  }
+}
