@@ -1,0 +1,8 @@
+@import '../../Components/css_utils.scss';
+
+#notFound{
+    .position{
+        @extend %center;
+        font-size: 4em;
+    }
+}
