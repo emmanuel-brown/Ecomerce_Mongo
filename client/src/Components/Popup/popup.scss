@@ -19,6 +19,7 @@
         word-wrap: break-word;
         margin: .5em .8em;
         font-size: 1em;
+
     }
     p, li{
         font-size: 2em;
@@ -57,7 +58,7 @@
     }
 }
 
-@media screen and (min-width: 500px){
+@media screen and (min-width: 650px){
     .Popup{
         top: 40%;
         border-radius: 100%;
@@ -78,13 +79,10 @@
         }
         &-header{
             margin-top: 1.4em;
-            font-size: 1.8em;
+            font-size: 1.3em;
             &-text{
                 margin: auto 2em;
             }
-        }
-        p, li{
-            
         }
         img{
             width: 16em;
@@ -115,3 +113,4 @@
         }
     }
 }
+

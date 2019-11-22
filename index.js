@@ -8,6 +8,7 @@ const axios = require('axios')
 const PORT = process.env.PORT || 5050;
 
 const app = express()
+
 app.use(cors()) //enable connection to react app even though they're seperate
 app.use(morgan('tiny'))
 app.use(helmet())
@@ -37,6 +38,9 @@ const jwt = require('jsonwebtoken')
 const myFunction = async () =>{
     const token = jwt.sign({ _id: 'abc123' }, 'YouAlreadyKnow')
     console.log(token)
+
+    const datData = jwt.verify(token, 'YouAlreadyKnow')
+    console.log(datData)
 }
 
 myFunction()

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Popup from '../../Components/Popup/Popup'
+import { FaCartPlus as Cart } from 'react-icons/fa'
 
 const Card = props =>{
     let [ popup, setPopup ] = useState(false)
@@ -20,6 +21,9 @@ const Card = props =>{
                 </div>
                 <div className={`prods-block-price`}>
                     {price}
+                </div>
+                <div>
+                    <Cart />
                 </div>
             </div>
             <Popup header={name} isOn={ popup } exit={ () => setPopup(false) }>
