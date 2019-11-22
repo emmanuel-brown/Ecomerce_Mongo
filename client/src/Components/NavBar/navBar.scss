@@ -1,0 +1,72 @@
+@import '../css_utils.scss';
+
+/* ------------------- Start of Mobile Version ------------------ */
+    /* ------------------- Beginning of Navigation ------------------ */
+#navigation{
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    color: $accent1;
+    background-color: $accent5;
+    position: relative;
+    text-align: center;
+    #title h1{
+        font-size: 30px;
+        margin-bottom: 0;
+    }
+    #navigator{
+        display: flex;
+        justify-content: space-around;
+        div {
+            margin: 0 auto;
+            p a{
+                text-decoration: none;
+                color: inherit;
+                display: block;
+                margin-top: 0;
+                padding-right: 0%;
+                margin-top: 0;
+                padding-right: 29%;
+                padding-left: 29%;
+                transform: translate(-2.7%)
+            }
+        }
+    }
+}
+/* ------------------- End of Mobile Version ------------------ */
+
+/* ------------------- Start of Navigation ------------------ */
+@media only screen and (min-width: 768px) {
+    /* ------------------- Beginning of Navigation ------------------ */
+    #navigation{
+        display: flex;
+        z-index: 1;
+        opacity: 1;
+        align-items: stretch;
+        justify-content: space-between;
+        flex-direction: row;
+        margin: auto;
+        color: $accent1;
+        position: relative;
+        #title h1{
+            font-size: 30px;
+            margin: 8px 0;
+        }
+        #navigator{
+            display: flex;
+
+            div{
+                padding: 17px 30px;
+                border-left: gray solid 1px;
+                p a{
+                    padding: 0px;
+                }
+            }
+            div:hover{
+                background-color: $accent4;
+            }
+        }
+    }
+}
+/* ------------------- End of Navigation ------------------ */
+/* ------------------- End of Desktop Version ------------------ */

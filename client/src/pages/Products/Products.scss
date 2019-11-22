@@ -1,0 +1,53 @@
+@import '../../Components/css_utils.scss';
+
+li{
+    list-style-type: none;
+}
+
+#Products{
+    .prods{
+        // position: relative;
+        text-align: center;
+        color: $accent2;
+        word-break: break-word;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        object-fit: contain;
+        &-block{
+            width: 10em;
+            // box-shadow: 0px 0px 21px 6px rgba(0,0,0,0.5);;
+            border-radius: 3%;
+            margin: 1em 0;
+            padding: 1em;
+            padding: 10px;
+            transition: 1s ease all;
+            &-imgContainer{
+                &-img{
+                    width: 9em;
+                    height: 9em;
+                    object-fit: cover;
+                    border-radius: 3%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px){
+    #Products{
+        grid-template-columns: 1fr 1fr 1fr;
+        .prods{
+            &-block{
+                font-size: 1.3em;
+                width: 14em;
+                &-imgContainer{
+                    &-img{
+                        width: 14em;
+                        height: 14em; 
+                    }
+                }
+            }
+        }
+    }
+}

@@ -11,8 +11,10 @@ const app = express()
 app.use(cors()) //enable connection to react app even though they're seperate
 app.use(morgan('tiny'))
 app.use(helmet())
+app.use(express.urlencoded())
+app.use(express.json())
 
-client = mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
+client = mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, (err, client) => {
     if (err) {    
         console.log(err) 
         return
@@ -25,9 +27,19 @@ client = mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useUni
 ///////////////////////
 
 const productRouter = require('./routes/products')
+const usersRouter = require('./routes/users')
 
 app.use('/products', productRouter)
+app.use('/users', usersRouter)
 
+const jwt = require('jsonwebtoken')
+
+const myFunction = async () =>{
+    const token = jwt.sign({ _id: 'abc123' }, 'YouAlreadyKnow')
+    console.log(token)
+}
+
+myFunction()
 
 
 app.listen(PORT, () => { console.log(`Listening on port ${PORT}`) })

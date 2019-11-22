@@ -1,36 +1,25 @@
 import React, { useEffect, useState } from 'react'
+import Popup from '../../Components/Popup/Popup'
 import axios from 'axios'
-
-const block = (name, type, price) =>(
-    <div className="block">
-        <div>
-            {name}
-        </div>
-        <div>
-            <ul>
-                {type.map(t => <li>{t}</li>)}
-            </ul>
-        </div>
-        <div>
-            {price}
-        </div>
-    </div>
-)
+import Card from './Card'
+import './Products.scss'
 
 const Products = () =>{
     const [ products, setProducts ] = useState([])
 
     useEffect(() =>{
-        axios.get('/products')
+        axios.get('/products/')
             .then(res => setProducts(res.data))
             .catch(() => console.log("Unable to get all products"))
     }, [])
-
-    return(
-        <>
-            {products.map(p => block(p.name, p.type, p.price))}
-        </>
+    
+    return(// redo products page compared to the last project
+        <main id="Products">
+            <div className="prods">
+                {products.map(product => <Card key={product._id} product={product} />)}
+            </div>
+        </main>
     )
 }
 
-export default Products;
+export default Products
