@@ -9,4 +9,27 @@ router.get('/', (req, res) =>{
     })
 })
 
+router.get('/:type/:filterBy/:direction', async (req, res) =>{
+    const { type, filterBy, direction } = req.params
+    const typed = type === null ? {} : { type }
+
+    try{
+        const prods = await Products.find(typed)
+        switch (filterBy) {
+            case "alpha":
+                prods.sort((a,b) => a.name - b.name)
+                break;
+            case "price":
+                prods.sort((a,b) => a.price - b.price)
+                break;
+            default:
+                break;
+        }
+        direction === "decsend" && prods.reverse()
+        res.send(prods)
+    } catch (e){
+        console.log(e)
+    }
+})
+
 module.exports = router

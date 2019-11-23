@@ -35,15 +35,15 @@ app.use('/users', usersRouter)
 
 const jwt = require('jsonwebtoken')
 
-const myFunction = async () =>{
-    const token = jwt.sign({ _id: 'abc123' }, 'YouAlreadyKnow')
-    console.log(token)
+// const myFunction = async () =>{
+//     const token = jwt.sign({ _id: 'abc123' }, 'YouAlreadyKnow')
+//     console.log(token)
 
-    const datData = jwt.verify(token, 'YouAlreadyKnow')
-    console.log(datData)
-}
+//     const datData = jwt.verify(token, 'YouAlreadyKnow')
+//     console.log(datData)
+// }
 
-myFunction()
+// myFunction()
 
 
 app.listen(PORT, () => { console.log(`Listening on port ${PORT}`) })
