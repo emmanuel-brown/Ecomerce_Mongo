@@ -1,16 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './navBar.scss'
 
-const Navbar = props => (
+const Navbar = () => (
     <nav id="navigation">
         <header id="title">
             <h1>Future Fancy</h1>
         </header>
         <div id="navigator">
-            <div><p><a href="/">Home</a></p></div>
-            <div><p><a href="/Product">Product</a></p></div>
-            <div><p><a href="/Contact">Contact</a></p></div>
-            <div><p><a href="/account">Login</a></p></div>
+            <div><p><Link to="/">Home</Link></p></div>
+            <div><p><Link to="/Product">Product</Link></p></div>
+            <div><p><Link to="/Contact">Contact</Link></p></div>
+            <div><p><Link to="/account">Login</Link></p></div>
         </div>
     </nav>
 )
