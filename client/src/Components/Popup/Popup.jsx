@@ -1,6 +1,5 @@
 import React from 'react'
 import './popup.scss'
-import { exists } from 'fs';
 
 const Popup = props =>{
     const { 

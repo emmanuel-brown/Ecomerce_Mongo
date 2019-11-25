@@ -21,11 +21,41 @@ img{
         &-block{
             font-size: 1.1em;
             vertical-align: center;
-            color: $accent2;
+            color: $accent1;
             width: 11em;
             padding: 1em 0;
             margin: 1em 0;
             box-shadow: 0 0 5px 1px black;
+        }
+    }
+}
+
+#filters{
+    .selectors{
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        div{
+            width: 100%;
+            height: 5em;
+            p{
+                font-size: 1.5rem;
+                line-height: 3em;
+            }
+        }
+        &-option{
+            background-color: $accent2;
+        }
+        &-selector{
+            color: $accent2;
+        }
+    }
+    .catagories{
+        border-top: 2px solid $accent2;
+        &-option{
+            padding: 1em 1em;
+            border-bottom: 2px solid $accent2;
+            text-align: center
         }
     }
 }

@@ -4,16 +4,24 @@ const cors = require('cors')
 const helmet = require('helmet')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
-const axios = require('axios')
-const PORT = process.env.PORT || 5050;
+const compression = require('compression')
+const PORT = process.env.PORT || 5050
 
 const app = express()
 
+app.use(compression())
 app.use(cors()) //enable connection to react app even though they're seperate
 app.use(morgan('tiny'))
 app.use(helmet())
 app.use(express.urlencoded())
 app.use(express.json())
+
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static("client/build"));
+	uri = process.env.ATLAS_URI  // connection string for Atlas here  
+} else {
+	uri = process.env.ATLAS_URI   // connection string for localhost mongo here  
+}
 
 client = mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, (err, client) => {
     if (err) {    

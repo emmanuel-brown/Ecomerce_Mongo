@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.scss';
-import httpClient from './httpClient'
+import imageCompression from 'browser-image-compression';
+// import httpClient from './httpClient'
 
 import {
   BrowserRouter as Router,
@@ -18,17 +19,17 @@ import Products from './pages/Products/Products'
 import Account from './pages/Account/Account'
 import NotFound from './pages/NotFound/NotFound'
 
-function App() {
-  const [ currentUser, setCurrentUser ] = useState(httpClient.getCurrentUser())
+const App = () =>{
+  // const [ currentUser, setCurrentUser ] = useState(httpClient.getCurrentUser())
 
-  const onLoginSuccess = (user) => {
-		setCurrentUser(httpClient.getCurrentUser())
-	}
+  // const onLoginSuccess = (user) => {
+	// 	setCurrentUser(httpClient.getCurrentUser())
+	// }
 
-	const logOut = () =>{
-		httpClient.logOut()
-		setCurrentUser(null)
-	}
+	// const logOut = () =>{
+	// 	httpClient.logOut()
+	// 	setCurrentUser(null)
+	// }
 
   return (
     <Router>
@@ -37,6 +38,7 @@ function App() {
         <Route path="/" exact component={ Home } />
         <Route path="/Product" exact component={ Products } />
         <Route path="/Account" exact component={ Account } />
+        <Route path="/NotFound" exact component={ NotFound } />
         <Redirect to="/NotFound" />
       </Switch>
     </Router>

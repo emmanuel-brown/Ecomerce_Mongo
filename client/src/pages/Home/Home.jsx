@@ -1,7 +1,7 @@
 import React from 'react'
 // import TheMoment from './images/beInTheMoment.jpg'
 // import TheNew from './images/theNew.jpg'
-import Oculus from './images/oculus.jpg'
+// import Oculus from './images/oculus.jpg'
 import './home.scss'
 
 
@@ -10,7 +10,7 @@ const Home = () =>{
         <div id="home">
 
             <header className="hero">
-            <iframe id="video" src="https://www.youtube.com/embed/SEEEaoyE29A?autoplay=1&playsinline=1&loop=1&modestbranding=0&showinfo=0&rel=0&cc_load_policy=1&iv_load_policy=3&theme=light&fs=0&color=white&autohide=0&controls=0&disablekb=1" width="560" height="315" frameborder="0"></iframe>
+
             </header>
             
             <span className="divider"></span>

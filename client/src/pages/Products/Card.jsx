@@ -6,7 +6,6 @@ const Card = props =>{
     let [ popup, setPopup ] = useState(false)
     const {
         name,
-        type,
         image_href,
         price,
     } = props.product

@@ -10,11 +10,9 @@ router.get('/', (req, res) =>{
 })
 
 router.get('/:type/:filterBy/:direction', async (req, res) =>{
-    const { type, filterBy, direction } = req.params
-    const typed = type === null ? {} : { type }
-
     try{
-        const prods = await Products.find(typed)
+        const { type, filterBy, direction } = req.params
+        prods = await Products.find(type !== "default" ? {type} : {})
         switch (filterBy) {
             case "alpha":
                 prods.sort((a,b) => a.name - b.name)
@@ -23,12 +21,12 @@ router.get('/:type/:filterBy/:direction', async (req, res) =>{
                 prods.sort((a,b) => a.price - b.price)
                 break;
             default:
-                break;
+                return prods;
         }
         direction === "decsend" && prods.reverse()
         res.send(prods)
     } catch (e){
-        console.log(e)
+        res.status(400).send()
     }
 })
 
