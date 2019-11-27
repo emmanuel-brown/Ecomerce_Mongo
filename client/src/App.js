@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.scss';
-import imageCompression from 'browser-image-compression';
-// import httpClient from './httpClient'
 
 import {
   BrowserRouter as Router,
