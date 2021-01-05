@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/emmanuel-brown/Ecomerce_Mongo#readme",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
     "concurrently": "^4.1.2",
