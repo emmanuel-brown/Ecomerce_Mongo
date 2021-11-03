@@ -39,6 +39,6 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.19.4",
     "react-youtube": "^7.9.0",
-    "validator": "^12.1.0"
+    "validator": "^13.7.0"
   }
 }
